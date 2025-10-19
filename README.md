@@ -37,13 +37,13 @@ README.md
 conda create -n gps-madrid -c conda-forge python=3.11 osmnx=1.9.3 networkx=3.3 matplotlib=3.8.2
 conda activate gps-madrid
 
-Option B — pip (Linux/Mac)
+### Option B — pip (Linux/Mac)
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements_gps.txt
 Note: The code assumes a directed MultiDiGraph (multiple parallel edges per node pair). Keep networkx==3.3 and osmnx==1.9.3 for compatibility.
 
-▶️ How to Run
+### ▶️ How to Run
 Run the GPS in your terminal:
 
 bash
@@ -63,7 +63,7 @@ Choose one of the three modes:
 
 The console will show turn-by-turn directions and open a map highlighting your route.
 
-🧠 How It Works
+### 🧠 How It Works
 Street Gazetteer (callejero.py)
 Reads the official Madrid CSV, converts DMS → decimal, and constructs normalized “Street, number” entries.
 
@@ -76,7 +76,7 @@ Uses your own Dijkstra implementation (from grafo_pesado.py) to compute the opti
 Visualization
 Only plots a subgraph around the route for faster rendering, hiding nodes and drawing thin edges.
 
-🧪 Testing
+### 🧪 Testing
 You can test your graph algorithms independently:
 python test_grafo.py
 This verifies Dijkstra path reconstruction and MST algorithms on small random graphs.
@@ -88,7 +88,7 @@ Keep node_size=0 and edge_linewidth≤0.4 for large city graphs.
 
 Use networkx.MultiDiGraph to prevent “keys” errors in OSMnx plotting.
 
-🧰 Dependencies
+### 🧰 Dependencies
 Python 3.11
 
 OSMnx 1.9.3
@@ -97,13 +97,13 @@ NetworkX 3.3
 
 Matplotlib 3.8.2
 
-❗ Troubleshooting
+### ❗ Troubleshooting
 Problem	Solution
 nx-loopback / dataclass error on import	Downgrade to networkx==3.3
 Slow map rendering	Use the optimized resalta_ruta (subgraph + thin lines)
 Address not found	Check accent/case normalization in the gazetteer CSV
 
-🙌 Acknowledgments
+### 🙌 Acknowledgments
 OpenStreetMap contributors and the OSMnx project
 
 Ayuntamiento de Madrid — official street gazetteer
