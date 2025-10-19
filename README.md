@@ -27,17 +27,6 @@ test_grafo.py # Toy tests for correctness
 requirements_gps.txt
 README.md
 
-python
-Copiar código
-
-Optional folders:
-docs/ # Assignment brief or report (PDF)
-notebooks/ # Jupyter notebooks for exploration
-data/ # Optional sample data (e.g., direcciones_sample.csv)
-
-yaml
-Copiar código
-
 ---
 
 ## ⚙️ Installation
@@ -47,9 +36,8 @@ Copiar código
 ```bash
 conda create -n gps-madrid -c conda-forge python=3.11 osmnx=1.9.3 networkx=3.3 matplotlib=3.8.2
 conda activate gps-madrid
+
 Option B — pip (Linux/Mac)
-bash
-Copiar código
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements_gps.txt
@@ -90,9 +78,6 @@ Only plots a subgraph around the route for faster rendering, hiding nodes and dr
 
 🧪 Testing
 You can test your graph algorithms independently:
-
-bash
-Copiar código
 python test_grafo.py
 This verifies Dijkstra path reconstruction and MST algorithms on small random graphs.
 
@@ -117,9 +102,6 @@ Problem	Solution
 nx-loopback / dataclass error on import	Downgrade to networkx==3.3
 Slow map rendering	Use the optimized resalta_ruta (subgraph + thin lines)
 Address not found	Check accent/case normalization in the gazetteer CSV
-
-📜 License
-This project is licensed under the MIT License — see LICENSE for details.
 
 🙌 Acknowledgments
 OpenStreetMap contributors and the OSMnx project
