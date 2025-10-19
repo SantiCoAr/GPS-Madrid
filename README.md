@@ -27,7 +27,6 @@ grafo_pesado.py    # Graph algorithms (Dijkstra, Prim, Kruskal)
 test_grafo.py      # Toy tests for correctness
 requirements_gps.txt
 README.md
-<<<<<<< HEAD
 ~~~
 
 Optional folders:
@@ -37,8 +36,6 @@ docs/              # Assignment brief or report (PDF)
 notebooks/         # Jupyter notebooks for exploration
 data/              # Optional sample data (e.g., direcciones_sample.csv)
 ~~~
-=======
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 
 ---
 
@@ -49,7 +46,6 @@ data/              # Optional sample data (e.g., direcciones_sample.csv)
 ~~~bash
 conda create -n gps-madrid -c conda-forge python=3.11 osmnx=1.9.3 networkx=3.3 matplotlib=3.8.2
 conda activate gps-madrid
-<<<<<<< HEAD
 ~~~
 
 ### Option B — pip (Linux/Mac; on Windows prefer Conda)
@@ -69,16 +65,6 @@ pip install -r requirements_gps.txt
 
 ## ▶️ How to Run
 
-=======
-
-### Option B — pip (Linux/Mac)
-python -m venv .venv
-source .venv/bin/activate   # On Windows: .venv\Scripts\activate
-pip install -r requirements_gps.txt
-Note: The code assumes a directed MultiDiGraph (multiple parallel edges per node pair). Keep networkx==3.3 and osmnx==1.9.3 for compatibility.
-
-### ▶️ How to Run
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 Run the GPS in your terminal:
 
 ~~~bash
@@ -107,14 +93,8 @@ Then:
 3. **Routing**  
    Uses a custom **Dijkstra** (from `grafo_pesado.py`) to compute the optimal path under the chosen weight function (distance, time, or expected time including traffic signals).
 
-<<<<<<< HEAD
 4. **Visualization**  
    Plots only a **subgraph around the route** (bbox margin) with hidden nodes and thin edges for fast rendering using OSMnx.
-=======
-### 🧠 How It Works
-Street Gazetteer (callejero.py)
-Reads the official Madrid CSV, converts DMS → decimal, and constructs normalized “Street, number” entries.
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 
 ---
 
@@ -122,12 +102,7 @@ Reads the official Madrid CSV, converts DMS → decimal, and constructs normaliz
 
 Validate the algorithms on toy graphs:
 
-<<<<<<< HEAD
 ~~~bash
-=======
-### 🧪 Testing
-You can test your graph algorithms independently:
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 python test_grafo.py
 ~~~
 
@@ -137,14 +112,9 @@ This verifies Dijkstra path reconstruction and MST algorithms (Prim/Kruskal) on 
 
 ## ⚡ Performance Tips
 
-<<<<<<< HEAD
 - Reduce the plotting margin (e.g., 150–250 m) in the `resalta_ruta` helper to make rendering faster.
 - Keep `node_size=0` and small `edge_linewidth` (≤ 0.4) for large city graphs.
 - Ensure the graph remains a **MultiDiGraph** to avoid “keys” errors in OSMnx plotting.
-=======
-### 🧰 Dependencies
-Python 3.11
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 
 ---
 
@@ -155,22 +125,11 @@ Python 3.11
 - **NetworkX 3.3**  
 - **Matplotlib 3.8.2**
 
-<<<<<<< HEAD
 (Exact pins are listed in `requirements_gps.txt`.)
 
 ---
 
 ## ❗ Troubleshooting
-=======
-### ❗ Troubleshooting
-Problem	Solution
-nx-loopback / dataclass error on import	Downgrade to networkx==3.3
-Slow map rendering	Use the optimized resalta_ruta (subgraph + thin lines)
-Address not found	Check accent/case normalization in the gazetteer CSV
-
-### 🙌 Acknowledgments
-OpenStreetMap contributors and the OSMnx project
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
 
 | Problem | Solution |
 | --- | --- |
@@ -178,7 +137,6 @@ OpenStreetMap contributors and the OSMnx project
 | Slow map rendering | Use the optimized `resalta_ruta` (bbox subgraph + thin edges, no nodes). |
 | Address not found | Check accent/case normalization and the gazetteer CSV format. |
 
-<<<<<<< HEAD
 ---
 
 ## 📜 License
@@ -192,6 +150,3 @@ This project is licensed under the **MIT License** — see `LICENSE` for details
 - OpenStreetMap contributors and the **OSMnx** project  
 - Ayuntamiento de Madrid — official street gazetteer  
 - ICAI course “Matemática Discreta — Práctica 3”
-=======
-ICAI course “Matemática Discreta — Práctica 3
->>>>>>> b4d601a54eca85cec427963adf007d1613829ebb
