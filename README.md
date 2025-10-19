@@ -27,15 +27,6 @@ grafo_pesado.py    # Graph algorithms (Dijkstra, Prim, Kruskal)
 test_grafo.py      # Toy tests for correctness
 requirements_gps.txt
 README.md
-~~~
-
-Optional folders:
-
-~~~text
-docs/              # Assignment brief or report (PDF)
-notebooks/         # Jupyter notebooks for exploration
-data/              # Optional sample data (e.g., direcciones_sample.csv)
-~~~
 
 ---
 
@@ -110,14 +101,6 @@ This verifies Dijkstra path reconstruction and MST algorithms (Prim/Kruskal) on 
 
 ---
 
-## ⚡ Performance Tips
-
-- Reduce the plotting margin (e.g., 150–250 m) in the `resalta_ruta` helper to make rendering faster.
-- Keep `node_size=0` and small `edge_linewidth` (≤ 0.4) for large city graphs.
-- Ensure the graph remains a **MultiDiGraph** to avoid “keys” errors in OSMnx plotting.
-
----
-
 ## 🧰 Dependencies
 
 - Python **3.11**  
@@ -136,12 +119,6 @@ This verifies Dijkstra path reconstruction and MST algorithms (Prim/Kruskal) on 
 | `nx-loopback` / dataclass error on import | Pin to `networkx==3.3` (as in the requirements). |
 | Slow map rendering | Use the optimized `resalta_ruta` (bbox subgraph + thin edges, no nodes). |
 | Address not found | Check accent/case normalization and the gazetteer CSV format. |
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** — see `LICENSE` for details.
 
 ---
 
